@@ -1,6 +1,6 @@
 export default function TrustBar() {
   return (
-    <section className="bg-white py-7 border-y">
+    <section className="bg-white py-5 border-y">
 
       <div className="max-w-7xl mx-auto px-6">
 

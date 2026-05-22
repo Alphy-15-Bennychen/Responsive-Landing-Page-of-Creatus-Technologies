@@ -23,7 +23,7 @@ export default function Process() {
 
           {/* STEP 1 */}
           <div className="bg-white p-8 rounded-3xl shadow-lg border hover:-translate-y-2 hover:shadow-2xl transition duration-300">
-            <div className="w-14 h-14 rounded-full bg-orange-500 text-white flex items-center justify-center text-2xl font-bold">
+            <div className="w-14 h-14 rounded-full bg-emerald-700 text-white flex items-center justify-center text-2xl font-bold">
               1
             </div>
 
@@ -41,7 +41,7 @@ export default function Process() {
           {/* STEP 2 */}
           <div className="bg-white p-8 rounded-3xl shadow-lg border hover:-translate-y-2 hover:shadow-2xl transition duration-300">
 
-            <div className="w-14 h-14 rounded-full bg-orange-500 text-white flex items-center justify-center text-2xl font-bold">
+            <div className="w-14 h-14 rounded-full bg-emerald-700 text-white flex items-center justify-center text-2xl font-bold">
               2
             </div>
 
@@ -59,7 +59,7 @@ export default function Process() {
           {/* STEP 3 */}
           <div className="bg-white p-8 rounded-3xl shadow-lg border hover:-translate-y-2 hover:shadow-2xl transition duration-300">
 
-            <div className="w-14 h-14 rounded-full bg-orange-500 text-white flex items-center justify-center text-2xl font-bold">
+            <div className="w-14 h-14 rounded-full bg-emerald-700 text-white flex items-center justify-center text-2xl font-bold">
               3
             </div>
 
