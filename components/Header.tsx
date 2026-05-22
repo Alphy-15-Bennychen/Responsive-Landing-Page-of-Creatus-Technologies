@@ -3,11 +3,12 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
-          {/* Top Phone Bar */}
-      <div className="w-full bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto flex justify-end px-6 py-0">
 
-          <div className="flex items-center gap-2 text-slate-700 font-medium ">
+      {/* Top Phone Bar */}
+      <div className="w-full bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto flex justify-end px-4 md:px-6 py-1">
+
+          <div className="flex items-center gap-2 text-slate-700 font-medium text-sm">
 
             {/* Dialer Icon */}
             <svg
@@ -25,125 +26,177 @@ export default function Header() {
               />
             </svg>
 
-            <a href="tel:+610240302314" className="hover:text-teal-800 transition bg-white shadow-sm">
+            <a
+              href="tel:+610240302314"
+              className="hover:text-teal-800 transition"
+            >
               +61 02 4030 2314
             </a>
 
           </div>
-
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-        {/* Logo */}
-        <div>
+      {/* Main Header */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
+
+        {/* Desktop Layout */}
+        <div className="hidden md:flex items-center justify-between">
+
+          {/* Logo */}
+          <div>
+            <Image
+              src="/images/logo.png"
+              alt="Creatus Technologies Logo"
+              width={250}
+              height={140}
+              priority
+            />
+          </div>
+
+          {/* Desktop Navbar */}
+          <nav className="flex items-center gap-6 text-slate-700 font-medium mx-auto">
+
+            {/* Home */}
+            <a
+              href="#"
+              className="relative group hover:text-teal-800 transition"
+            >
+              Home
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-800 transition-all group-hover:w-full"></span>
+            </a>
+
+            {/* Industries */}
+            <div className="relative group">
+
+              <button className="flex items-center gap-1 hover:text-teal-800 transition">
+                Industries
+                <span className="text-xs group-hover:rotate-180 transition-transform duration-300">
+                  ▼
+                </span>
+              </button>
+
+              <div className="absolute left-0 top-full mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+
+                {[
+                  "Mining",
+                  "Engineering",
+                  "Manufacturing",
+                  "Farming & Agriculture",
+                  "Automotive",
+                  "Food Processing",
+                ].map((item) => (
+                  <a
+                    key={item}
+                    href="#"
+                    className="block px-4 py-2 hover:bg-teal-500 hover:text-white transition"
+                  >
+                    {item}
+                  </a>
+                ))}
+
+              </div>
+            </div>
+
+            {/* Services */}
+            <div className="relative group">
+
+              <button className="flex items-center gap-1 hover:text-teal-800 transition">
+                Services
+                <span className="text-xs group-hover:rotate-180 transition-transform duration-300">
+                  ▼
+                </span>
+              </button>
+
+              <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+
+                {[
+                  "Mechanical Design & Drafting",
+                  "3D Scan to CAD",
+                  "3D Scan Inspection",
+                  "Digital Prototyping",
+                  "Reverse Engineering",
+                ].map((item) => (
+                  <a
+                    key={item}
+                    href="#"
+                    className="block px-4 py-2 hover:bg-teal-500 hover:text-white transition"
+                  >
+                    {item}
+                  </a>
+                ))}
+
+              </div>
+            </div>
+
+            {/* About */}
+            <a
+              href="#"
+              className="relative group hover:text-teal-800 transition"
+            >
+              About Us
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-800 transition-all group-hover:w-full"></span>
+            </a>
+
+            {/* Gallery */}
+            <a
+              href="#"
+              className="relative group hover:text-teal-800 transition"
+            >
+              Gallery
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-800 transition-all group-hover:w-full"></span>
+            </a>
+
+          </nav>
+
+          {/* Button */}
+          <div>
+            <button className="bg-teal-800 hover:bg-teal-900 text-white font-semibold py-2 px-5 rounded-sm transition-colors duration-200 shadow-sm">
+              Request a Quote
+            </button>
+          </div>
+
+        </div>
+
+        {/* MOBILE LAYOUT */}
+        <div className="md:hidden flex flex-col items-center">
+
+          {/* Mobile Logo */}
           <Image
             src="/images/logo.png"
             alt="Creatus Technologies Logo"
-            width={250}
-            height={140}
+            width={180}
+            height={100}
             priority
           />
-        </div>
 
-        {/* Navbar */}
-        <nav className="hidden md:flex items-center gap-6 text-slate-700 font-medium mx-auto">
+          {/* Mobile Navbar */}
+          <nav className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-3 text-sm font-medium text-slate-700">
 
-          {/* Home */}
-          <a
-            href="#"
-            className="relative group hover:text-teal-800 transition"
-          >
-            Home
-            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-800 transition-all group-hover:w-full"></span>
-          </a>
+            <a href="#" className="hover:text-teal-800 transition">
+              Home
+            </a>
 
-          {/* Industries Dropdown */}
-          <div className="relative group">
-
-            <button className="flex items-center gap-1 hover:text-teal-800 transition group">
+            <a href="#" className="hover:text-teal-800 transition">
               Industries
-              <span className="text-xs group-hover:rotate-180 transition-transform duration-300">
-                ▼
-              </span>
-            </button>
+            </a>
 
-            <div className="absolute left-0 top-full mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-
-              {[
-                "Mining",
-                "Engineering",
-                "Manufacturing",
-                "Farming & Agriculture",
-                "Automotive",
-                "Food Processing",
-              ].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="block px-4 py-2 hover:bg-teal-500 hover:text-teal-1000 transition"
-                >
-                  {item}
-                </a>
-              ))}
-
-            </div>
-          </div>
-
-          {/* Services Dropdown */}
-          <div className="relative group">
-
-            <button className="flex items-center gap-1 hover:text-teal-800 transition group">
+            <a href="#" className="hover:text-teal-800 transition">
               Services
-              <span className="text-xs group-hover:rotate-180 transition-transform duration-300">
-                ▼
-              </span>
-            </button>
+            </a>
 
-            <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="#" className="hover:text-teal-800 transition">
+              About Us
+            </a>
 
-              {[
-                "Mechanical Design & Drafting",
-                "3D Scan to CAD",
-                "3D Scan Inspection",
-                "Digital Prototyping",
-                "Reverse Engineering",
-              ].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="block px-4 py-2 hover:bg-teal-500 hover:text-teal-900 transition"
-                >
-                  {item}
-                </a>
-              ))}
+            <a href="#" className="hover:text-teal-800 transition">
+              Gallery
+            </a>
 
-            </div>
-          </div>
+          </nav>
 
-          {/* About */}
-          <a
-            href="#"
-            className="relative group hover:text-teal-800 transition"
-          >
-            About Us
-            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-800 transition-all group-hover:w-full"></span>
-          </a>
-
-          {/* Gallery */}
-          <a
-            href="#"
-            className="relative group hover:text-teal-800 transition"
-          >
-            Gallery
-            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-800 transition-all group-hover:w-full"></span>
-          </a>
-
-        </nav>
-
-        {/* Right side */}
-        <div className="flex items-center gap-4">
-          <button className="bg-teal-800 hover:bg-teal-900 text-white font-semibold py-2 px-5 rounded-sm transition-colors duration-200 shadow-sm">
+          {/* Mobile Button */}
+          <button className="mt-5 bg-teal-800 hover:bg-teal-900 text-white font-semibold py-2 px-5 rounded-sm transition-colors duration-200 shadow-sm text-sm">
             Request a Quote
           </button>
 
