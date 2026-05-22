@@ -95,7 +95,6 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
-
         {/* SERVICES */}
         <div>
           <h3 className="text-xl font-semibold">Services</h3>
@@ -132,18 +131,36 @@ export default function Footer() {
             <li>+61 02 4030 2314</li>
             <li>info@creatustech.com.au</li>
           </ul>
+
+          {/* WEATHER CARD */}
+          <div className="mt-6">
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-sm px-5 py-4 w-45 text-center">
+              <div className="flex items-center justify-center gap-2">
+                {weather && <WeatherIcon code={weather.code} />}
+
+                <div className="text-white font-semibold text-lg">
+                  {weather?.temperature != null
+                    ? `${Math.round(weather.temperature)}°C`
+                    : "Loading..."}
+                </div>
+              </div>
+
+              <p className="text-xs text-slate-300 mt-1">
+                Live Sydney Weather 
+              </p>
+
+              <div className="mt-3 h-[2px] w-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-400 opacity-60 animate-pulse rounded-full"></div>
+            </div>
+          </div>
         </div>
 
-        {/* BRAND + SOCIAL + WEATHER */}
+        {/* BRAND + SOCIAL */}
         <div className="flex flex-col items-center">
-
-          <h1 className="text-3xl font-bold text-center">
+          <h1 className="text-3xl pt-12 font-bold text-center">
             CREATUS TECHNOLOGIES
           </h1>
 
-          <div className="mt-3 text-slate-400">
-            ___________
-          </div>
+          <div className="mt-3 text-slate-400">___________</div>
 
           {/* SOCIAL */}
           <div className="flex gap-6 pt-5">
@@ -159,38 +176,13 @@ export default function Footer() {
               className="h-8 opacity-70 hover:opacity-100 transition"
             />
           </div>
-
-          {/* WEATHER CARD */}
-          <div className="mt-6">
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-2xl px-5 py-4 w-52 text-center">
-
-              <div className="flex items-center justify-center gap-2">
-
-                {weather && <WeatherIcon code={weather.code} />}
-
-                <div className="text-white font-semibold text-lg">
-                  {weather?.temperature != null
-                    ? `${Math.round(weather.temperature)}°C`
-                    : "Loading..."}
-                </div>
-
-              </div>
-
-              <p className="text-xs text-slate-300 mt-1">
-                Live Sydney Weather • Updated
-              </p>
-
-              <div className="mt-3 h-[2px] w-full bg-gradient-to-r from-teal-400 via-blue-400 to-purple-400 opacity-60 animate-pulse rounded-full"></div>
-
-            </div>
-          </div>
-
         </div>
       </div>
 
       {/* BOTTOM */}
       <div className="border-t border-slate-700 mt-12 pt-8 text-center text-slate-400 text-sm">
-        © 2026 Creatus Technologies Designed by Alphy Bennychen. All rights reserved.
+        © 2026 Creatus Technologies Designed by Alphy Bennychen. All rights
+        reserved.
       </div>
     </footer>
   );
